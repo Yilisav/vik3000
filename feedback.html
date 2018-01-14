@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Компьютер внутри</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" /> 
+		<script src="js/jquery.min.js"></script>
+    </head>
+    
+    <body>
+    	<p><a name="top"></a></p>
+    	<section id="page">
+            <header> 
+                <hgroup>
+                    <h1>Устройство компьютера </h1>
+                    <h3>а что там внутри?</h3>
+                </hgroup>     
+                <nav class="clear">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+						<li><a href="feedback.html">Обратная связь</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="articles">
+                <div class="line"></div> 
+                
+                <article id="article1"> 
+                    <p><a name="article1"></a></p>
+					<h2>Обратная связь</h2>
+                    
+                    <div class="line"></div>
+                    
+                    <div class="articleBody clear">
+                    
+						<div id="feedback-form">
+							<form id="feedback" method="post" onsubmit="fsend(); return false;">
+								<p>
+									Введите ФИО:
+								</p>
+								<input name="fio" id="fio" type="text" value="" />
+								<p>
+									Ваша почта:
+								</p>
+								<input name="mail" id="mail" type="text" value="" />
+								<p>
+									Ваш вопрос:
+								</p>
+								<textarea name="question" id="question" value=""></textarea>
+								<br />
+								<input type="submit" value="отправить" />
+							</form>
+						</div>
+                    </div>
+                </article>
+            </section>
+
+        <footer> 
+           <div class="line"></div>
+           <p><a href="#top">Наверх</a></p>
+        </footer>
+		</section>
+	<script>
+		// проверка полей формы перед отправкой
+		function fsend(e){
+			//alert(2);
+			var value = true;
+			var mail = $("#mail").val(); // Получаем e-mail пользователя
+			var fio = $("#fio").val(); // Получаем fio пользователя
+			var question = $("#question").val(); // Получаем question пользователя
+			var pattern = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+			
+			if (fio ==""){
+				alert("Не введено ФИО!");
+				//exit;
+				value=false;
+			}
+			if(!pattern.test(mail)) {
+			// Действие, если e-mail не корректен
+				alert("Неверно введен email!");
+				//return false;
+				value=false;
+			} 
+			if (question ==""){
+				alert("Не введен вопрос!");
+				value=false;
+			}
+			if (value == true) {
+				e.submit();
+			}
+		}
+	</script>
+    </body>
+</html>

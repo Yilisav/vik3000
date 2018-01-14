@@ -193,3 +193,41 @@ footer a.by{
 footer a.up{
 	float:right;
 }
+
+/* стили для формы */
+#feedback-form{
+    /* background-color: #ececec; */
+    /* margin: 50px auto 0; */
+    /* text-align: center; */
+    width: 430px;
+    /* padding: 15px; */
+		}
+			#feedback-form h2{
+				margin-bottom: 25px;
+			}
+			#feedback-form input[type=text],
+			#feedback-form textarea{
+				background-color: #fff;
+				border: 1px solid #A9A9A9;
+				padding: 1px 5px;
+				width: 90%;
+			}
+			#feedback-form input[type=text]{
+				height: 26px;
+			}
+			#feedback-form textarea{
+				height: 75px;
+				padding-top: 5px;
+			}
+			#feedback-form input[type=submit]{
+				margin-top: 15px;
+				background-color: #213e4a;
+				border: 1px solid #CCCCCC;
+				color: #FFFFFF;
+				font-weight: bold;
+				height: 40px;
+				line-height: 40px;
+				text-transform: uppercase;
+				width: 225px;
+				cursor: pointer;
+			}
